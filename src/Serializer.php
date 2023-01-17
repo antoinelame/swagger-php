@@ -166,7 +166,7 @@ class Serializer
                 $key = $declaration[1];
                 $annotationHash = [];
                 foreach ($value as $k => $v) {
-                    $annotation = $this->doDeserialize($v, $nestedClass, $context);
+                    $annotation = $this->doDeserialize((object) $v, $nestedClass, $context);
                     $annotation->{$key} = $k;
                     $annotationHash[$k] = $annotation;
                 }
